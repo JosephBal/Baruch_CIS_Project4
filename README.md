@@ -1,27 +1,42 @@
-# Baruch_CIS_Project5
-This was my 6th project in my CIS 2300 "Programming and Computational Thinking" led by professor Sadat Chowdhury
+# Baruch_CIS_Project4
+This was my 5th project in my CIS 2300 "Programming and Computational Thinking" led by professor Sadat Chowdhury
 
 # Project Description
 
+Write a program that finds out how many numbers between 1 and M (inclusive) are divisible by 2, 3, and 5 but not by 7, and displays that count. In the program:
+M = (your unique 5 digit number)
 
-Write a program that finds out how many numbers between 1 and 10,000 (inclusive) are divisible by any of the unique non-zero digits of K, where K = (your 5 digit number) x 19
+Here are some sample numbers to clarify the question: 
+```
+1 is not divisible by 2, so it should not be counted
+2 is divisible by 2 but not by 3, so it should not be counted
+3 is not divisible by 2, so it should not be counted
+...
+29 is not divisible by 2, so it should not be counted
+30 is divisble by 2, 3, and 5 and is not divisible by 7, so it should be counted
+...
+90  is divisble by 2, 3, and 5 and is not divisible by 7, so it should be counted 
+...
+210 is divisible by 2, 3, 5, and 7, so it should *not* be counted
+... (so on)
+```
 
-Here is an example of what Jane, whose 5 digit number is 12340 should do:
-For Jane, K = 234460, and her unique non-zero digits are: 2, 3, 4, and 6.
-Therefore, Jane needs to write a program that calculates how many (count) of numbers between 1 and 10,000 are divisible by 2, 3, 4, or 6
+My program displays only one numeric answer (the count)
 
-My program shows only one numeric answer (the count)
-
-Here is some sample code to help you understand:
-
+Here is some sample code to help you get started:
 ```python
+# my id
+M = 12345
 
-count = 0
+# initialize count to 0
+count = 0 
 
-# count all the numbers between 1 and 10,000 (inclusive) that are even (divisible by 2)
-for n in range(1,10_000+1):
-  if n % 2 == 0:
+# count all the numbers between 1 and M that are even (divisible by 2) and divisible by 3 also
+for n in range(1,M+1):
+  if (n % 2 == 0) and (n % 3 == 0):
     count += 1
 
+# display output
 print(count)
+
 ```
